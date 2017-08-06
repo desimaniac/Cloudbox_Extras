@@ -61,8 +61,7 @@
     state: stopped
   when: settings_json.stat.exists == False
 
-- name: Modifying transmission settings
-  ghetto_json:
+- ghetto_json:
     path=/opt/transmission/settings.json
     download-queue-size=10
     ratio-limit-enabled=true
