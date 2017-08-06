@@ -22,6 +22,11 @@
     name: transmission
     state: absent
 
+- name: Check settings.json exists
+  stat:
+    path: "/opt/transmission/settings.json"
+  register: settings_json
+
 - name: Create and start container
   docker_container:
     name: transmission
