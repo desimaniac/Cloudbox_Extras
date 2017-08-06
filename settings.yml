@@ -5,4 +5,4 @@ domain: testcloudbox.ml
 transmission:
   user: seed
   passwd: password321
-  downloads: "/home/{{user}}/downloads/tranmission"
+  downloads: "/home/{{user}}/downloads/transmission"
