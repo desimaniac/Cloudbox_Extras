@@ -1,0 +1,8 @@
+user: seed
+passwd: password123
+email: your@email.com
+domain: testcloudbox.ml
+transmission:
+  user: seed
+  passwd: password321
+  downloads: "/home/{{user}}/downloads/tranmission"
