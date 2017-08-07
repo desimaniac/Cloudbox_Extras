@@ -6,3 +6,7 @@ transmission:
   user: seed
   passwd: password321
   downloads: "/home/{{user}}/downloads/transmission"
+nzbget:
+  downloads: "/home/{{user}}/downloads/nzbget"
+rutorrent:
+  downloads: "/home/{{user}}/downloads/rutorrent"
