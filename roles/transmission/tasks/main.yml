@@ -69,14 +69,16 @@
 - name: Modifying transmission settings
   ghetto_json:
     path=/opt/transmission/settings.json
+    download-dir=/downloads/transmission/complete
     download-queue-size=10
+    incomplete-dir=/downloads/transmission/incomplete
     ratio-limit-enabled=true
     rpc-enabled=true
     rpc-authentication-required=true
     rpc-username={{transmission.user}}
     rpc-password={{transmission.passwd}}
     rpc-whitelist-enabled=false
-    watch-dir=/downloads/watch
+    watch-dir=/downloads/transmission/watch
 
 - name: Start container to apply changes
   docker_container:
