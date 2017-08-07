@@ -1,6 +1,6 @@
 # Cloudbox Extras
 
-Just a few docker containers I wanted to [cloudbox](https://github.com/l3uddz/cloudbox)
+Just a few docker containers I wanted to [Cloudbox](https://github.com/l3uddz/cloudbox)
 
 ## Installation
 
