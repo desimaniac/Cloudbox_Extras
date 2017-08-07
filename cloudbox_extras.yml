@@ -4,3 +4,5 @@
     - settings.yml
   roles:
     - { role: transmission }
+    - { role: sonarr }
+    - { role: radarr }
