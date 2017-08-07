@@ -45,6 +45,7 @@
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
       - "/opt/transmission:/config"
+      - "{{transmission.downloads}}/watch:/watch"
       - "{{transmission.downloads}}:/downloads/transmission"
     restart_policy: always
     networks:
@@ -78,8 +79,6 @@
     rpc-username={{transmission.user}}
     rpc-password={{transmission.passwd}}
     rpc-whitelist-enabled=false
-    watch-dir=unset
-    watch-dir=/downloads/transmission/watch
 
 - name: Start container to apply changes
   docker_container:
