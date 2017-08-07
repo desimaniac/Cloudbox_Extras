@@ -79,7 +79,7 @@
     rpc-password={{transmission.passwd}}
     rpc-whitelist-enabled=false
     watch-dir=/downloads/transmission/watch
-
+    
 - name: Start container to apply changes
   docker_container:
     name: transmission
