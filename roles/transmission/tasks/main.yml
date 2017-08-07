@@ -45,7 +45,7 @@
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
       - "/opt/transmission:/config"
-      - "{{transmission.downloads}}:/downloads"
+      - "{{transmission.downloads}}:/downloads/transmission"
     restart_policy: always
     networks:
       - name: cloudbox
