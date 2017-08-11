@@ -25,6 +25,7 @@
       - "{{nzbget.downloads}}:/downloads/nzbget"
       - "{{rutorrent.downloads}}:/downloads/rutorrent"
       - "{{transmission.downloads}}:/downloads/transmission"
+      - "/opt/scripts:/scripts"
     networks:
       - name: cloudbox
         ipv4_address: 172.18.0.13
