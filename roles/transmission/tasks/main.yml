@@ -45,7 +45,8 @@
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
       - "/opt/transmission:/config"
-      - "{{transmission.downloads}}:/downloads"
+      - "{{transmission.downloads}}/watch:/watch"
+      - "{{transmission.downloads}}:/downloads/transmission"
     restart_policy: always
     networks:
       - name: cloudbox
@@ -69,14 +70,16 @@
 - name: Modifying transmission settings
   ghetto_json:
     path=/opt/transmission/settings.json
-    download-queue-size=10
-    ratio-limit-enabled=true
+    download-dir=/downloads/transmission/complete
+    download-queue-size={{transmission.download_queue_size}}
+    incomplete-dir=/downloads/transmission/incomplete
+    ratio-limit={{transmission.ratio_limit}}
+    ratio-limit-enabled={{transmission.ratio_limit_enabled}}
     rpc-enabled=true
     rpc-authentication-required=true
     rpc-username={{transmission.user}}
     rpc-password={{transmission.passwd}}
     rpc-whitelist-enabled=false
-    watch-dir=/downloads/watch
 
 - name: Start container to apply changes
   docker_container:

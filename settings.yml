@@ -6,3 +6,10 @@ transmission:
   user: seed
   passwd: password321
   downloads: "/home/{{user}}/downloads/transmission"
+  ratio_limit_enabled: true
+  ratio_limit: 2
+  download_queue_size: 10
+nzbget:
+  downloads: "/home/{{user}}/downloads/nzbget"
+rutorrent:
+  downloads: "/home/{{user}}/downloads/rutorrent"
