@@ -1,0 +1,29 @@
+---
+- name: Stop and remove any existing container
+  docker_container:
+    name: glances
+    state: absent
+
+- name: Create and start container
+  docker_container:
+    name: glances
+    image: nicolargo/glances
+    published_ports:
+      - "127.0.0.1:61209:61209"
+    pid_mode: host
+    env:
+      GLANCES_OPT: "-w"
+      VIRTUAL_HOST: "glances.{{domain}}"
+      VIRTUAL_PORT: 61209
+      LETSENCRYPT_HOST: "glances.{{domain}}"
+      LETSENCRYPT_EMAIL: "{{email}}"
+    volumes:
+      - "/etc/localtime:/etc/localtime:ro"
+      - "/opt/glances:/glances/conf/"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    networks:
+      - name: cloudbox
+        aliases:
+          - glances
+    restart_policy: always
+    state: started

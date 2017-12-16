@@ -2,7 +2,7 @@
 - hosts: localhost
   vars_files:
     - settings.yml
+    - /home/seed/cloudbox/settings.yml
   roles:
-    - { role: transmission }
-    - { role: sonarr }
-    - { role: radarr }
+    - { role: sanity_check }
+    - { role: glances, tags: ['glances'] }
