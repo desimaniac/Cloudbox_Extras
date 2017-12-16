@@ -13,9 +13,9 @@
     pid_mode: host
     env:
       GLANCES_OPT: "-w"
-      VIRTUAL_HOST: "glances.{{domain}}"
+      VIRTUAL_HOST: "{{glances.subdomain}}.{{domain}}"
       VIRTUAL_PORT: 61209
-      LETSENCRYPT_HOST: "glances.{{domain}}"
+      LETSENCRYPT_HOST: "{{glances.subdomain}}.{{domain}}"
       LETSENCRYPT_EMAIL: "{{email}}"
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
