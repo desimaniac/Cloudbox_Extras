@@ -8,6 +8,7 @@
   docker_container:
     name: glances
     image: nicolargo/glances
+    pull: yes
     published_ports:
       - "127.0.0.1:61209:61209"
       - "61208:61208"
