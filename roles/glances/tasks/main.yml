@@ -10,13 +10,13 @@
     image: nicolargo/glances
     pull: yes
     published_ports:
-      - "127.0.0.1:61209:61209"
+      - "61209:61209"
       - "61208:61208"
     pid_mode: host
     env:
       GLANCES_OPT: "-w"
       VIRTUAL_HOST: "{{glances.subdomain}}.{{domain}}"
-      VIRTUAL_PORT: 61209
+      VIRTUAL_PORT: 61208
       LETSENCRYPT_HOST: "{{glances.subdomain}}.{{domain}}"
       LETSENCRYPT_EMAIL: "{{email}}"
     volumes:
