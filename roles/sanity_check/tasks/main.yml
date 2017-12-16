@@ -7,5 +7,5 @@
   when: ansible_distribution_version | version_compare('16.04', '!=')
 
 - name: Verify a tag was provided
-  fail: msg="You must supply a tag via the --tags option
+  fail: msg="You must supply a tag via the --tags option"
   when: tags is not defined
